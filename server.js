@@ -1,22 +1,4 @@
-const express = require('express');
-const cors = require('cors');
-const crypto = require('crypto');
-const fs = require('fs');
-const path = require('path');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Enable CORS
-app.use(cors());
-app.use(express.json());
-
-// File to store tokens with expiry times
-const TOKENS_FILE = 'tokens.json';
-
-// Helper: Load tokens from file
-function loadTokens() {
-  try {
     if (fs.existsSync(TOKENS_FILE)) {
       return JSON.parse(fs.readFileSync(TOKENS_FILE, 'utf8'));
     }
