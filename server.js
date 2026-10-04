@@ -88,7 +88,7 @@ app.get('/api/tokens', (req, res) => {
 // ============ STATISCHE DATEIEN ============
 app.use(express.static('.'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`✅ Server läuft auf Port ${PORT}`);
     console.log(`📝 Token generieren: http://localhost:${PORT}/api/generate`);
